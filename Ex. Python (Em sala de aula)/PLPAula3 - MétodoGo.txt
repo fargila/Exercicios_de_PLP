@@ -1,0 +1,44 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var codigo, qtd int
+
+	for {
+		fmt.Print("Informe o código do produto: ")
+		fmt.Scan(&codigo)
+
+		if codigo == 0 {
+			break
+		}
+
+		fmt.Print("Informe a quantidade comprada: ")
+		fmt.Scan(&qtd)
+
+		switch codigo {
+		case 1:
+			total := 0.50 * float64(qtd)
+			fmt.Printf("O valor total é: %.2f\n", total)
+		case 2:
+			total := 1.00 * float64(qtd)
+			fmt.Printf("O valor total é: %.2f\n", total)
+		case 3:
+			total := 4.00 * float64(qtd)
+			fmt.Printf("O valor total é: %.2f\n", total)
+		case 5:
+			total := 7.00 * float64(qtd)
+			fmt.Printf("O valor total é: %.2f\n", total)
+		case 9:
+			total := 8.00 * float64(qtd)
+			fmt.Printf("O valor total é: %.2f\n", total)
+		case 0:
+			fmt.Println("Saindo do programa.")
+			return
+		default:
+			fmt.Println("Código Inválido!")
+		}
+	}
+}
